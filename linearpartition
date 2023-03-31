@@ -80,6 +80,9 @@ def main():
 
     path = os.path.dirname(os.path.abspath(__file__))
     cmd = ["%s/%s" % (path, ('bin/linearpartition_v' if use_vienna else 'bin/linearpartition_c')), beamsize, is_sharpturn, is_verbose, bpp_file, bpp_prefix, pf_only, bpp_cutoff, forest_file, mea, gamma, TK, threshold, ThreshKnot_prefix, MEA_prefix, MEA_bpseq, shape_file_path, is_fasta]
+
+    print("Calling the following cmd:")
+    print(subprocess.list2cmdline(cmd))
     subprocess.call(cmd, stdin=sys.stdin)
     
 if __name__ == '__main__':
